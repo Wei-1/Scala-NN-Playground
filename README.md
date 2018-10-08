@@ -32,8 +32,3 @@ git clone https://github.com/Wei-1/Scala-NN-Playground.git
 ## Test
 
     sbt test
-
-
-## Build Jar
-
-    sbt assembly
