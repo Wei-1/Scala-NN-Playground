@@ -47,9 +47,6 @@ class Playground {
                 NeuralNetwork.updateWeights(network, state.learningRate, state.regularizationRate)
             }
         }
-        // Compute the loss.
-        ui.lossTrain = getLoss(network, trainData)
-        ui.lossTest = getLoss(network, testData)
         updateUI()
     }
 
@@ -71,8 +68,6 @@ class Playground {
         val outputActivation = if(state.problem == "REGRESSION") LINEAR else TANH
         network = NeuralNetwork.buildNetwork(shape, state.activation, outputActivation,
             state.regularization, state.inputFormats, state.initZero)
-        ui.lossTrain = getLoss(network, trainData)
-        ui.lossTest = getLoss(network, testData)
         updateUI(true)
     }
 
@@ -89,5 +84,8 @@ class Playground {
     }
 
     def updateUI(firstStep: Boolean = false): Unit = {
+        // Compute the loss.
+        ui.lossTrain = getLoss(network, trainData)
+        ui.lossTest = getLoss(network, testData)
     }
 }
