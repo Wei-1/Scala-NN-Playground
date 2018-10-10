@@ -16,14 +16,18 @@ class Playground {
     var trainData = Array[Example2D]()
     var testData = Array[Example2D]()
     var state = new State
-    var ui = new UI
+    var report = new Report
 
     val inputDataMap = Map(
         "x" -> ((x: Double, y: Double) => (x)),
         "y" -> ((x: Double, y: Double) => (y)),
         "x^2" -> ((x: Double, y: Double) => (x * x)),
         "y^2" -> ((x: Double, y: Double) => (y * y)),
-        "x*y" -> ((x: Double, y: Double) => (x * y))
+        "x*y" -> ((x: Double, y: Double) => (x * y)),
+        "cos_x" -> ((x: Double, y: Double) => (Math.cos(x))),
+        "cos_y" -> ((x: Double, y: Double) => (Math.cos(y))),
+        "sin_x" -> ((x: Double, y: Double) => (Math.sin(x))),
+        "sin_y" -> ((x: Double, y: Double) => (Math.sin(y)))
     )
 
     def constructInput(x: Double, y: Double): Array[Double] = {
@@ -47,7 +51,7 @@ class Playground {
                 NeuralNetwork.updateWeights(network, state.learningRate, state.regularizationRate)
             }
         }
-        updateUI()
+        updateReport()
     }
 
     def getLoss(network: Array[Array[Node]], dataPoints: Array[Example2D]): Double = {
@@ -68,7 +72,7 @@ class Playground {
         val outputActivation = if(state.problem == "REGRESSION") LINEAR else TANH
         network = NeuralNetwork.buildNetwork(shape, state.activation, outputActivation,
             state.regularization, state.inputFormats, state.initZero)
-        updateUI(true)
+        updateReport(true)
     }
 
     def generateData(firstTime: Boolean = false): Unit = {
@@ -83,9 +87,9 @@ class Playground {
         testData = data.drop(splitIndex)
     }
 
-    def updateUI(firstStep: Boolean = false): Unit = {
+    def updateReport(firstStep: Boolean = false): Unit = {
         // Compute the loss.
-        ui.lossTrain = getLoss(network, trainData)
-        ui.lossTest = getLoss(network, testData)
+        report.lossTrain = getLoss(network, trainData)
+        report.lossTest = getLoss(network, testData)
     }
 }

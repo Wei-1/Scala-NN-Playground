@@ -4,7 +4,7 @@
 // From Google's NN-Playground in TypeScript to Scala
 package com.interplanetarytech.nn
 
-class UI {
+class Report {
     var lossTrain = 0.0
     var lossTest = 0.0
     def show: Unit = {

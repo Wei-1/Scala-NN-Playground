@@ -8,7 +8,9 @@ Based on [Google's Deep Neural Network Playground](http://playground.tensorflow.
 
 ## WIP
 
- - [ ] visualization
+ - [ ] Test
+
+ - [ ] Visualization
 
 
 ## Dev-Environment
