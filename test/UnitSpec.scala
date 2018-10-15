@@ -16,9 +16,9 @@ class UnitSpec extends PlaySpec {
     "return a valid error with action init" in {
       val pg = new Playground
       val controller = new PgController(stubControllerComponents(), pg)
-      val result = controller.init(FakeRequest())
-      (contentAsString(result).toDouble < 1) mustBe true
-      (contentAsString(result).toDouble > 0) mustBe true
+      val result = controller.test(FakeRequest()) // return JSON string
+      (pg.report.lossTest.toDouble < 1) mustBe true
+      (pg.report.lossTest.toDouble > 0) mustBe true
     }
   }
 
