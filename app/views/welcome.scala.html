@@ -1,0 +1,78 @@
+@(message: String, style: String = "scala") 
+
+@defining(play.core.PlayVersion.current) { version =>
+
+<section id="top">
+</section>
+
+<div id="content" class="wrapper doc">
+<article>
+
+  <h1>Welcome to Wei's NN Playground</h1>
+
+  <p>
+    Congratulations, you are trying this neural network playground made by Wei.
+  </p>
+
+  <blockquote>
+    <p>
+      You’re using Play @version
+    </p>
+  </blockquote>
+
+  <h2>State</h2>
+  <p>
+    <a href="@routes.PgController.state">Click here to see the state!</a>
+  </p>
+
+  <h2>Playground Controller</h2>
+    These are the controls of the Neural Network Playground. 
+    If you see NaN, it means you still have not initialize the network.
+  <p>
+    <a href="@routes.PgController.test">Initialize a Neural Network and Run 1000 iteration!</a>
+  </p>
+  <p>
+    <a href="@routes.PgController.init">Initialize the Neural Network!</a>
+  </p>
+  <p>
+    <a href="@routes.PgController.gen">Generate Data</a>
+  </p>
+  <p>
+    <a href="@routes.PgController.reset">Reset Network</a>
+  </p>
+  <p>
+    <a href="@routes.PgController.one">Run 1 iteration</a>
+  </p>
+  <p>
+    <a href="@routes.PgController.run(100.toString)">Run 100 iteration (number can be modified)</a>
+  </p>
+
+  <h2>Observe</h2>
+  <p>
+    <a href="@routes.PgController.report">Network State</a>
+  </p>
+  <p>
+    <a href="@routes.PgController.report">Report</a>
+  </p>
+
+</article>
+
+<aside>
+  <h3>Wei</h3>
+  <ul>
+    <li><a href="https://github.com/Wei-1">Github</a></li>
+  </ul>
+  <h3>Play</h3>
+  <ul>
+    <li><a href="https://playframework.com/documentation/@version/PlayConsole">Using the Play console</a></li>
+    <li><a href="https://playframework.com/documentation/@version/IDE">Setting up your preferred IDE</a></li>
+    <li><a href="https://playframework.com/download#examples">Example Projects</a>
+  </ul>
+  <h3>Others</h3>
+  <ul>
+  </ul>
+  
+</aside>
+
+</div>
+}

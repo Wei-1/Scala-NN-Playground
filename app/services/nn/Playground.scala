@@ -4,6 +4,15 @@
 // From Google's NN-Playground in TypeScript to Scala
 package com.interplanetarytech.nn
 
+import javax.inject._
+/* Usage:
+ * val pg = new Playground
+ * pg.generateData()
+ * pg.reset()
+ * while(run) pg.oneStep() // for(_ <- 1 to 1000) pg.oneStep()
+ * check pg.report         // println(pg.report.lossTest)
+ */
+@Singleton // inject nn playground
 class Playground {
     val RECT_SIZE = 30
     val BIAS_SIZE = 5
@@ -64,7 +73,7 @@ class Playground {
         loss / dataPoints.length
     }
 
-    def reset(onStartup: Boolean = false): Unit = {
+    def reset(firstTime: Boolean = false): Unit = {
         // Make a simple network.
         iter = 0
         val numInputs = constructInput(0 , 0).length
@@ -87,8 +96,9 @@ class Playground {
         testData = data.drop(splitIndex)
     }
 
-    def updateReport(firstStep: Boolean = false): Unit = {
+    def updateReport(firstTime: Boolean = false): Unit = {
         // Compute the loss.
+        report.iter = iter
         report.lossTrain = getLoss(network, trainData)
         report.lossTest = getLoss(network, testData)
     }

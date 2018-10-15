@@ -8,9 +8,9 @@ Based on [Google's Deep Neural Network Playground](http://playground.tensorflow.
 
 ## WIP
 
- - [ ] Test
+ - [x] Test
 
- - [ ] Visualization
+ - [x] Visualization
 
 
 ## Dev-Environment
@@ -31,6 +31,11 @@ git clone https://github.com/Wei-1/Scala-NN-Playground.git
 ```
 
 
-## Test
+## Run
 
-    sbt test
+```
+sbt run
+```
+
+After set the program running, the service will be at port 9000.
+Visit http://localhost:9000 for further information.

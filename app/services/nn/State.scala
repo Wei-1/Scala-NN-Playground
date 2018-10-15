@@ -25,4 +25,8 @@ class State {
     var regDataset: (Int, Double) => Array[Example2D] = DataSet.regressPlane
     var seed: String = ""
     var inputFormats: Array[String] = Array("x", "y", "x^2", "y^2", "x*y")
+
+    override def toString: String = {
+        "output state"
+    }
 }

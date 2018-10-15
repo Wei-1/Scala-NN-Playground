@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+# An example of running the neural network
+GET     /test                       controllers.PgController.test
+
+# Init the neural network (reset data + network)
+GET     /init                       controllers.PgController.init
+
+# Generate data
+GET     /gen                        controllers.PgController.gen
+
+# Reset network
+GET     /reset                      controllers.PgController.reset
+
+# Run one step
+GET     /one                        controllers.PgController.one
+
+# See the state
+GET     /state                      controllers.PgController.state
+
+# See the report
+GET     /report                     controllers.PgController.report
+
+# Run *number iteration
+GET     /run/*iter                  controllers.PgController.run(iter)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(file)
