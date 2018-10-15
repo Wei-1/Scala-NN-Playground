@@ -27,6 +27,29 @@ class State {
     var inputFormats: Array[String] = Array("x", "y", "x^2", "y^2", "x*y")
 
     override def toString: String = {
-        "output state"
+        s"""
+{
+    "learningRate": ${learningRate},
+    "regularizationRate": ${regularizationRate},
+    "showTestData": ${showTestData},
+    "noise": ${noise},
+    "batchSize": ${batchSize},
+    "tutorial": "${tutorial}",
+    "percTrainData": ${percTrainData},
+    "activation": "${if(activation != null)activation.getClass.getName else "null"}",
+    "regularization": "${if(regularization != null)regularization.getClass.getName else "null"}",
+    "problem": "${problem}",
+    "initZero": ${initZero},
+    "hideText": ${hideText},
+    "collectStats": ${collectStats},
+    "numHiddenLayers": ${numHiddenLayers},
+    "hiddenLayerControls": "Not Available Yet!",
+    "networkShape": [${networkShape.mkString(",")}],
+    "dataset": "${if(dataset != null)dataset.getClass.getName else "null"}",
+    "regDataset": "${if(regDataset != null)regDataset.getClass.getName else "null"}",
+    "seed": "${seed}",
+    "inputFormats": [${inputFormats.mkString("\"", "\",\"", "\"")}]
+}
+        """
     }
 }

@@ -24,28 +24,28 @@ class PgController @Inject() (cc: ControllerComponents,
         pg.generateData()
         pg.reset()
         for(_ <- 1 to 1000) pg.oneStep()
-        Ok(pg.report.lossTest.toString)
+        Ok(pg.report.toString)
     }
     def init = Action {
         pg.generateData()
         pg.reset()
-        Ok(pg.report.lossTest.toString)
+        Ok(pg.report.toString)
     }
     def gen = Action {
         pg.generateData()
-        Ok(pg.report.lossTest.toString)
+        Ok(pg.report.toString)
     }
     def reset = Action {
         pg.reset()
-        Ok(pg.report.lossTest.toString)
+        Ok(pg.report.toString)
     }
     def one = Action {
         pg.oneStep()
-        Ok(pg.report.lossTest.toString)
+        Ok(pg.report.toString)
     }
     def run(_iter: String) = Action {
         for(_ <- 1 to _iter.toInt) pg.oneStep()
-        Ok(pg.report.lossTest.toString)
+        Ok(pg.report.toString)
     }
     def state = Action {
         Ok(pg.state.toString)

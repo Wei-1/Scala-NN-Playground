@@ -14,6 +14,12 @@ class Report {
         println("Loss Test  : " + lossTest)
     }
     override def toString: String = {
-        iter + " " + lossTrain + " " + lossTest
+        s"""
+{
+    "iter": ${iter},
+    "lossTrain": ${lossTrain},
+    "lossTest": ${lossTest}
+}
+        """
     }
 }
