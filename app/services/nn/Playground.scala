@@ -2,7 +2,7 @@
 // Wei Chen
 // 2018-10-04
 // From Google's NN-Playground in TypeScript to Scala
-package com.interplanetarytech.nn
+package com.scalaml.nn
 
 import javax.inject._
 /* Usage:

@@ -3,7 +3,7 @@ package controllers
 import javax.inject._
 
 import play.api.mvc._
-import com.interplanetarytech.nn.Playground
+import com.scalaml.nn.Playground
 
 /**
  * This controller demonstrates how to use dependency injection to

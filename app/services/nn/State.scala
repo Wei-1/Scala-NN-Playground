@@ -2,7 +2,7 @@
 // Wei Chen
 // 2018-10-08
 // From Google's NN-Playground in TypeScript to Scala
-package com.interplanetarytech.nn
+package com.scalaml.nn
 
 class State {
     var learningRate = 0.03

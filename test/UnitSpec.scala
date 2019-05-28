@@ -4,7 +4,7 @@ import play.api.test.Helpers._
 import play.api.test.FakeRequest
 
 import controllers.PgController
-import com.interplanetarytech.nn._
+import com.scalaml.nn._
 
 /**
  * Unit tests can run without a full Play application.

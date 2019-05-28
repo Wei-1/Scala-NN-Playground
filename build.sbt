@@ -1,4 +1,4 @@
-name := """scala-nn-play"""
+name := """scalaml-nn-play"""
 
 version := "0.1"
 

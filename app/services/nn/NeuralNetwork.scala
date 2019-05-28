@@ -2,7 +2,7 @@
 // Wei Chen
 // 2018-10-02
 // From Google's NN-Playground in TypeScript to Scala
-package com.interplanetarytech.nn
+package com.scalaml.nn
 
 /**
  * A node in a neural network. Each node has a state
